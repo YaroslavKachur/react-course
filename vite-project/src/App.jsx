@@ -11,11 +11,30 @@ const [messages, setMessages] = useState([]);
     setText("");
   }
 
+  function handleDelete(indexToDelete){
+   setMessages((prev) => prev.filter((_, index) => index !== indexToDelete));
+  }
+ 
   return(
   <div>
-    <input type="text" value={text} placeholder='Write your text' onChange={(e) => setText(e.target.value)}/>     
-    <button onClick={handleAdd}>add to your list</button>
-    {messages.map((msg, index) => (<p key={index}>{msg}</p>))}
+    <input type="text" 
+    value={text} 
+    placeholder='Write your text' 
+    onChange={(e) => setText(e.target.value)}
+    />     
+    <button 
+    onClick={handleAdd}
+    >
+    add
+    </button>
+    {messages.map(
+      (msg, index) => (<p key={index}>{msg} 
+      <button onClick={() => handleDelete(index)}>
+        Deleate
+      </button>
+    </p>
+))}
+
   </div>
 )
 }
