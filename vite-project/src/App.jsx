@@ -3,45 +3,43 @@ import './App.css'
 
 function MessageList() {
   const [text, setText] = useState("");
-const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([]);
 
-  function handleAdd(){
-    if (text === "") return;
-    setMessages((prev) => [...prev, text]);
+  function handleAdd() {
+    if(text === "") return;
+
+    const newMessage = {
+      id : Date.now(),
+      text: text,
+    }; 
+    
+    setMessages((prev) => [...prev, newMessage])
     setText("");
   }
 
-  function handleDelete(indexToDelete){
-   setMessages((prev) => prev.filter((_, index) => index !== indexToDelete));
+  function handleDelete(idToDelete) {
+    setMessages((prev) => prev.filter((msg) => msg.id !== idToDelete))
   }
- 
+  
   return(
-  <div>
-    <input type="text" 
-    value={text} 
-    placeholder='Write your text' 
-    onChange={(e) => setText(e.target.value)}
-    />     
-    <button 
-    onClick={handleAdd}
-    >
-    add
-    </button>
-    {messages.map(
-      (msg, index) => (<p key={index}>{msg} 
-      <button onClick={() => handleDelete(index)}>
-        Deleate
-      </button>
-    </p>
-))}
+    <div>
+      <input 
+      type="text" value={text} placeholder='Write here' 
+      onChange={(e) => setText(e.target.value)} />
 
-  </div>
-)
+    <button 
+    onClick={handleAdd} style={{borderRadius:"10px", border:"1px solid"}}>
+      Add
+    </button>
+    {messages.map((msg) => (<p key={msg.id}>{msg.text} <button onClick={() => handleDelete(msg.id)}>Delete</button></p>))}
+    </div>
+  )
+
 }
 
 
-
 function App() {
+ 
 return (
   <>
   <MessageList/>
