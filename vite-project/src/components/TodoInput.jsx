@@ -1,6 +1,6 @@
 
 
-function TodoInput(text, setText, handleAdd) {
+function TodoInput({text, setText, handleAdd}) {
 
     return( 
         <div>
