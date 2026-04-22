@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import TodoInput from "./TodoInput";
 import TodoList from "./TodoList";
 
 function TodoApp() {
 const [text, setText] = useState("");
-const [todos, setTodos] = useState([]);
+const [todos, setTodos] = useState(() => {
+    const saved = localStorage.getItem("todos");
+    return saved ? JSON.parse(saved) : []});
 
     function handleAdd() {
         if(text === "") return;
@@ -24,6 +27,9 @@ const [todos, setTodos] = useState([]);
     function handleToggleDone(idToDone){
         setTodos((prev) => prev.map((todo) => todo.id === idToDone ? {...todo, done: !todo.done } : todo ))
     }
+
+    useEffect(() => {localStorage.setItem("todos" , JSON.stringify(todos)); }, 
+    [todos]);
 
 return(
     <>
