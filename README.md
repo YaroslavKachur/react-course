@@ -12,7 +12,7 @@ The Todo App was the first project in this repository. It was built to practice 
 The Note App is a second practice project based on the same CRUD logic, but with a more realistic structure. Each note has a title, text, creation date, and can be deleted or edited.
 
 ### 3. Tic-Tac-Toe (Infinity Mode)
-A modern Tic-Tac-Toe game with a unique infinity mode where, after the 6th move, the oldest piece of the current player automatically disappears from the board, freeing up space to continue the game endlessly until someone wins.
+Part of the React Tutorial with handleReset and moves history
 
 ## Commit history / development progress
 
