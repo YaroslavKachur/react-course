@@ -6,7 +6,7 @@ export default function Nav () {
     <>
     <div className="nav">
         <Link to="/react-course/">Home</Link>
-        <Link to="/node_modules/notes">Notes</Link>
+        <Link to="/react-course/notes">Notes</Link>
         <Link to="/react-course/tic-tac-toe">Tic-Tac-Toe</Link>
         
     </div>
