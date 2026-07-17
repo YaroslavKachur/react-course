@@ -1,0 +1,10 @@
+.nav {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.nav a {
+    color: black;
+    font-size: clamp(16px, 2vw, 20px);
+}
