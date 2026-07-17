@@ -11,9 +11,9 @@ function App() {
     <>
       <Nav />
       <Routes>
-        <Route path="/react-course/" element={<Home/>} />
-        <Route path="/react-course/notes" element={<NoteApp />} />
-        <Route path="/react-course/tic-tac-toe" element={<Game/>} />
+        <Route path="/" element={<Home/>} />
+        <Route path="/notes" element={<NoteApp />} />
+        <Route path="/tic-tac-toe" element={<Game/>} />
       </Routes>
     </>
   );
