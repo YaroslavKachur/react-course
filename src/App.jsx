@@ -10,9 +10,9 @@ function App() {
     <>
       <Nav />
       <Routes>
-        <Route path="/" element={<div>Working on now</div>} />
-        <Route path="/notes" element={<NoteApp />} />
-        <Route path="/tic-tac-toe" element={<Game/>} />
+        <Route path="/react-course/" element={<div>Working on now</div>} />
+        <Route path="/react-course/notes" element={<NoteApp />} />
+        <Route path="/react-course/tic-tac-toe" element={<Game/>} />
       </Routes>
     </>
   );
